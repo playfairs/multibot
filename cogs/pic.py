@@ -7,9 +7,10 @@ import os
 class Pic(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.GUILD_ID = 961097369817071626  # Replace with your actual guild ID
-        self.ROLE_ID = 1293380613893656690  # Replace with your actual "pic" role ID
-        self.log_channel_id = 1286944011671830559  # Replace with your actual log channel ID
+        # Replace these with your actual IDs or let the user set them
+        self.GUILD_ID = 123456789012345678  # Replace with your actual guild ID
+        self.ROLE_ID = 123456789012345678  # Replace with your actual "pic" role ID
+        self.log_channel_id = 123456789012345678  # Replace with your actual log channel ID
         self.config_file = os.path.join(os.path.dirname(__file__), 'vanity_config.json')
         self.vanity = self.load_vanity()
 
@@ -31,7 +32,7 @@ class Pic(commands.Cog):
         with open(self.config_file, 'w') as f:
             json.dump(config, f, indent=4)
 
-    @commands.command(name="vanity")
+    @commands.command(name="vanity", help="Update the vanity link for permissions.")
     async def update_vanity(self, ctx, new_vanity: str):
         """Update the vanity link stored in the config file."""
         # Update the vanity value
@@ -39,7 +40,7 @@ class Pic(commands.Cog):
         self.save_vanity()
         
         # Message to acknowledge the update
-        await ctx.send(f"Updated vanity to: `{new_vanity}`\n\nRep `{new_vanity}` for pic perms!") 
+        await ctx.send(f"Updated vanity to: `{new_vanity}`\n\nRep `{new_vanity}` for pic perms!")
 
     @app_commands.command(name="scan", description="Manage scan task for checking vanity in user statuses.")
     async def scan(self, interaction: discord.Interaction):
@@ -135,7 +136,7 @@ class Pic(commands.Cog):
         return (f"Deep scan complete. {len(users_with_vanity)} users have '{self.vanity}' in their status, "
                 f"{len(users_without_vanity)} users had the role removed.")
 
-# Event listener for on_message to respond to "pic perms" requests
+    # Event listener for on_message to respond to "pic perms" requests
     @commands.Cog.listener()
     async def on_message(self, message):
         if message.author == self.bot.user:
