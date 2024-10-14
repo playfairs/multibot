@@ -145,7 +145,7 @@ class Utility(commands.Cog):
     @commands.command(name="changeav", description="Change the bot's avatar to a provided URL.")
     async def change_avatar(self, ctx, url: str):
         """Change the bot's avatar to the provided URL. Restricted to the bot owner."""
-        OWNER_ID = 785042666475225109  # Replace with your actual Discord User ID
+        OWNER_ID = 123456789012345678  # Replace with your actual Discord User ID
 
         # Check if the user is the bot owner
         if ctx.author.id != OWNER_ID:
