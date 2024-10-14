@@ -37,7 +37,7 @@ class AntiNuke(commands.Cog):
             embed.add_field(name="Target", value=str(target), inline=True)
 
         # Send the log message to a specific channel (replace with your logging channel ID)
-        logging_channel = guild.get_channel(1292729507807101101)  # Replace with your logging channel ID
+        logging_channel = guild.get_channel(123456789012345678)  # Replace with your logging channel ID
         if logging_channel:
             await logging_channel.send(embed=embed)
 
