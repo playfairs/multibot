@@ -17,12 +17,12 @@ intents = discord.Intents.all()
 bot = commands.Bot(command_prefix=config["prefix"], intents=intents, help_command=None)
 
 # Replace this with your actual log channel ID where join/leave messages will be sent
-joins_log_channel_id = 1282060391475581009  # Replace with your actual log channel ID
+joins_log_channel_id = 123456789012345678  # Replace with your actual log channel ID
 
 @bot.command(name="status")
 async def set_custom_status(ctx, *, status: str):
     """Set the bot's custom status (activity)."""
-    allowed_user_id = 785042666475225109  # Replace with your actual allowed user ID
+    allowed_user_id = 123456789012345678  # Replace with your actual allowed user ID
     
     if ctx.author.id != allowed_user_id:
         await ctx.send("You must be the owner of this bot to use this command.")
@@ -59,7 +59,7 @@ async def on_member_join(member):
     
     # Ensure the channel exists
     if channel:
-        await channel.send(f"{member.mention} Welcome! 😊 If you're able to, invite some of your friends! Also, if you want pic perms, rep /heresy in your status.")
+        await channel.send(f"{member.mention} Welcome! 😊 If you're able to, invite some of your friends! Also, if you want pic perms, rep /vanity in your status.") # Replace /vanity with your actual server vanity if any
 
 # Event for when a member leaves the server
 @bot.event
