@@ -4,7 +4,7 @@ import os
 import asyncio
 
 class IDLogger(commands.Cog):
-    ALLOWED_USER_ID = 785042666475225109  # Replace this with your Discord user ID
+    ALLOWED_USER_ID = 123456789012345678  # Replace this with your Discord user ID
 
     def __init__(self, bot):
         self.bot = bot
