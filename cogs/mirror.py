@@ -6,7 +6,7 @@ class MirrorCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.mirrored_user = None  # Variable to store the mirrored user
-        self.default_avatar_url = "https://preview.redd.it/what-are-yalls-thoughts-on-ken-carson-v0-jla1r3ldstla1.jpg?width=640&crop=smart&auto=webp&s=f542ec9a38742c37c4e42fc16f828761f453239b"  # URL of the default avatar to revert to
+        self.default_avatar_url = "https://your-actual-bot-av-url"  # URL of the default avatar to revert to
 
     # Command to start mirroring a user and update the bot's avatar and nickname
     @commands.command(name='mirror')
